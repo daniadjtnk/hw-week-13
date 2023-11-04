@@ -16,6 +16,7 @@ import {
   useDisclosure,
   useToast,
   VStack,
+  Box,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -42,29 +43,32 @@ const Navbar = () => {
       justify="space-between"
       wrap="wrap"
       padding="1rem"
-      bg="teal.500"
-      color="white"
+      bg="gray.50"
+      color="blue.500"
     >
+    
+    
       <Link to="/">
         <Flex align="center" mr={5} cursor="pointer">
           <Text fontSize="xl" fontWeight="bold">
-            My Website
+            Literary Lounge
           </Text>
         </Flex>
       </Link>
       <HStack>
         {isLogin && (
           <Link to="/newbook">
-            <Button colorScheme="blackAlpha">Create New Book</Button>
+            <Button colorScheme='blue' variant='ghost' color={"blue.500"}>Create New Book</Button>
           </Link>
         )}
         {!isLogin ? (
-          <Button onClick={onOpen} colorScheme="blue">
+          <Button onClick={onOpen} colorScheme="blue" color="blue.500" textColor={"white"}>
             Login
           </Button>
         ) : (
           <Button
             colorScheme="blue"
+            color={"white"}
             onClick={() => {
               window.localStorage.removeItem("token");
               setIsLogin(false);

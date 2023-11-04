@@ -10,8 +10,8 @@ export default function Books({ id, title, author, image, publisher, year }) {
         <Heading size={"md"}>
           {title} ({year})
         </Heading>
-        <Text>{author}</Text>
         <Image w={24} h={24} src={`http://localhost:8000/${image}`} />
+        <Text>{author}</Text>
         <Text>
           <span>Publisher: </span>
           {publisher}
